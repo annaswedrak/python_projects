@@ -47,6 +47,7 @@ def coin_flip2():
             break
         else:
             continue
+    return correct_count, total_count
 
 #coin_flip2()
 #Let’s see if we can expand upon this challenge - what if
@@ -59,3 +60,35 @@ def coin_flip2():
 #As an additional challenge see if you can build the program such that the
 #the user can choose between the two
 #guessing games at startup, and possibly even switch after each cycle.
+def dice_roll():
+    correct_count = 0
+    total_count = 0
+    while True:
+        print("Guess the outcome of a 6 - sided dice roll (enter a number from 1 to 6)")
+        guess = int(input())
+        roll = random.randint(1,6)
+        print("The result of a dice roll is " + str(roll))
+        if guess == roll:
+            print("You guessed correctly!")
+            correct_count += 1
+            total_count += 1
+        else:
+            print("You didn't guessed correctly!")
+            total_count += 1
+        print("Total count of your guesses is " + str(total_count))
+        print("The number of correct guesses is " + str(correct_count))
+        print("Do you want to play again? Type y for yes and n for no")
+        again = input()
+        if again == "n":
+            break
+        else:
+            continue
+    return correct_count, total_count
+
+
+def playing_game():
+    while True:
+        print("Which game do you want to play?")
+        print("Press 1 for coin flip, 2 for 6 - sided dice roll and 3 to quit")
+        game = int(input())
+        
